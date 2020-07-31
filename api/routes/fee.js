@@ -18,7 +18,7 @@ router.get("/", async function(req, res) {
 });
 
 router.get("/month", async function(req, res) {
-    let rows = await knex("tb_fee").sum("price as price").select("created_at");
+    let rows = await knex("tb_fee").sum("price as price").groupBy('price').orderBy('created_at', 'desc').select("created_at");
     res.send(JSON.stringify(rows));
 });
 router.get("/permonth", async function(req, res) {

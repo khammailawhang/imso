@@ -5,10 +5,10 @@ const router = express.Router()
 var knex = require('knex')({
     client: 'mysql',
     connection: {
-        host: "127.0.0.1",
-        user: "imso",
-        password: "P@$$w0rd",
-        database: "imso",
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'imso'
     }
 });
 
